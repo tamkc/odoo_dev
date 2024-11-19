@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Main Menu Item -->
+    <menuitem id="menu_blank_template" name="Blank Template" sequence="10" />
+
+    <!-- Submenu Item linking to the action -->
+    <menuitem id="menu_blank_template_submenu"
+        name="Blank Template Models"
+        parent="menu_blank_template"
+        action="action_blank_template_model"
+        sequence="10" />
+</odoo>
