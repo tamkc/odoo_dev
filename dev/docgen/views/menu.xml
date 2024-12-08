@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- Main Menu Item -->
+    <menuitem id="menu_docgen" name="Document Generator" sequence="10" />
+
+    <!-- Submenu Item linking to the action -->
+    <menuitem id="menu_docgen_submenu"
+        name="Document Generator"
+        parent="menu_docgen"
+        action="action_docgen_generator"
+        sequence="10" />
+</odoo>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View docgen.generator View List -->
+    <record id="view_docgen_generator_list" model="ir.ui.view">
+        <field name="name">view.docgen.generator.list</field>
+        <field name="model">docgen.generator</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+
+    <!-- View docgen.generator form -->
+    <record id="view_docgen_generator_form" model="ir.ui.view">
+        <field name="name">view.docgen.generator.form</field>
+        <field name="model">docgen.generator</field>
+        <field name="arch" type="xml">
+            <form string="Docgen Generator">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" />
+                        <h1>
+                            <field name="name" placeholder="Name..." />
+                        </h1>
+                    </div>
+                    <group name="Config" string="string">
+                        <field name="template_id" create="1"/>
+                        <field name="output_format" />
+                        <field name="status" />
+                    </group>
+                    <notebook>
+                        <page name="name" string="string">
+                            <field name="content_ids">
+                                <list editable="bottom" create="1" delete="1" multi_edit="1"
+                                    string="Chart of accounts" open_form_view="True">
+                                    <field
+                                        name="name" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View docgen.generator search -->
+    <record id="view_docgen_generator_search" model="ir.ui.view">
+        <field name="name">view.docgen.generator.search</field>
+        <field name="model">docgen.generator</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="1" string="Group By">
+                    <filter string="Name" name="name" domain="[]" context="{'group_by':'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action docgen.generator -->
+    <record id="action_docgen_generator" model="ir.actions.act_window">
+        <field name="name">Docgen Generator</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">docgen.generator</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                There is no examples click here to add new Docgen Generator.
+            </p>
+        </field>
+    </record>
+
+</odoo>
