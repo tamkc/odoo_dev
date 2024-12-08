@@ -38,24 +38,8 @@ class ContentData(models.Model):
 
     computed_value = fields.Char(
         string="Computed Value",
-        compute="_compute_computed_value",
         store=True,
         help="Holds the generated or final value based on the data type.",
     )
 
-    @api.depends("data_type", "value")
-    def _compute_computed_value(self):
-        for record in self:
-            if record.data_type == "fixed":
-                record.computed_value = record.value
-            elif record.data_type == "variable":
-                # Placeholder logic for variable value processing.
-                # This can be customized to fetch dynamic content based on 'value'.
-                record.computed_value = f"{{{record.value}}}"
-            elif record.data_type == "sequence":
-                # Assume you have an auto-generated sequence.
-                record.computed_value = str(record.sequence)
-            elif record.data_type == "date":
-                record.computed_value = "test"
-            else:
-                record.computed_value = ""
+
